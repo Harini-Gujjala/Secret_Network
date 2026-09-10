@@ -279,8 +279,6 @@ Possible future additions include:
 
 **Harini G**
 
-Computer Science Engineering student interested in **full-stack development, UI/UX and creative web projects**.
-
 ---
 
 ⭐ If you enjoyed the puzzle, consider giving the repository a star!
