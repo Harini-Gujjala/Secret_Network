@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-container">
+    
+    <!-- Header -->
+    <header>
+      <h1>SECRET NETWORK</h1>
+      <p class="subtitle">Find the 3 hidden connections between the nodes</p>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-box">
+        <span class="stat-label">SCORE</span>
+        <span class="stat-value" id="score-display">1000</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">ATTEMPTS</span>
+        <span class="stat-value" id="attempts-display">10 / 10</span>
+      </div>
+    </div>
+
+    <!-- Interactive Game Board -->
+    <div class="board-wrapper">
+      <svg id="svg-layer" class="svg-layer" aria-hidden="true"></svg>
+      
+      <div class="nodes-grid" id="nodes-container">
+        <!-- Nodes generated dynamically via JS for scalable architecture -->
+      </div>
+    </div>
+
+    <!-- Game Actions -->
+    <div class="controls-section">
+      <button id="check-btn" class="btn btn-primary">CHECK NETWORK</button>
+      <button id="hint-btn" class="btn btn-secondary">HINT (<span id="hints-left">2</span> left)</button>
+    </div>
+
+    <!-- Hint Display Message -->
+    <div id="hint-box" class="hint-box hidden" role="status" aria-live="polite"></div>
+
+    <!-- Feedback Area -->
+    <div class="feedback-card" id="feedback-card">
+      <h3 class="feedback-title">LAST FEEDBACK</h3>
+      <div class="feedback-metrics">
+        <div class="metric metric-correct">
+          <span class="metric-count" id="correct-count">-</span>
+          <span class="metric-label">Correct</span>
+        </div>
+        <div class="metric metric-incorrect">
+          <span class="metric-count" id="incorrect-count">-</span>
+          <span class="metric-label">Incorrect</span>
+        </div>
+        <div class="metric metric-missing">
+          <span class="metric-count" id="missing-count">-</span>
+          <span class="metric-label">Missing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guess History -->
+    <section class="history-section">
+      <h2>GUESS HISTORY</h2>
+      <div id="history-list" class="history-list">
+        <p class="empty-history">No guesses submitted yet.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- End Game Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">🎉 Network Solved!</h2>
+      <p id="modal-description">You successfully deduced the secret network.</p>
+
+      <!-- Secret Network Reveal Display -->
+      <div class="reveal-section">
+        <span class="reveal-title">SECRET NETWORK SOLUTION</span>
+        <div class="reveal-board-wrapper">
+          <svg id="modal-svg-layer" class="svg-layer" aria-hidden="true"></svg>
+          <div class="nodes-grid mini-grid" id="modal-nodes-container"></div>
+        </div>
+        <div id="modal-solution-tags" class="solution-tags"></div>
+      </div>
+      
+      <div class="modal-stats">
+        <div>
+          <span class="modal-stat-label">Final Score:</span>
+          <span id="modal-final-score" class="modal-stat-value">700</span>
+        </div>
+        <div>
+          <span class="modal-stat-label">Attempts Used:</span>
+          <span id="modal-attempts-used" class="modal-stat-value">3</span>
+        </div>
+      </div>
+
+      <button id="restart-btn" class="btn btn-primary">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
