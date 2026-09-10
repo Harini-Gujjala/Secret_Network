@@ -197,9 +197,7 @@ index.html
 ## 🌐 Live Demo
 
 **Play Secret Network:**
-https://your-username.github.io/Secret-Network/
-
-> Replace the URL above with your GitHub Pages link after enabling GitHub Pages.
+https://harini-gujjala.github.io/Secret_Network/
 
 ---
 
